@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Día del Estudiante - ProA</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="robots" content="index">
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <!--  -->
+	</head>
+<body>
+  
+  <img src="LOGO DDE.png">
+  <p style="margin-bottom: 5vh;margin-left: 20%;margin-right: 20%;">Ingresá tu DNI para saber en qué equipo estás</p>
+  <input type="text" id="dni">
+  <button onclick="search(document.getElementById('dni').value);">Enviar</button>
+  <p id="nombre"></p>
+  <p id="equipo" style="font-size: 2.5vh; padding: 5px;">
+
+  <script type="text/javascript">
+    let ROJO = ["50522726", "51034875", "51017633", "50744352", "50434486", "50420945", "50523158", "51018390", "49618818", "49618789", "95166239", "49766764", "49456700", "49622519", "50178923", "49619536", "49322105", "49499215", "47713646", "49456032", "48904365", "48753168", "48129138", "48536942", "48753042", "48327113", "48327140", "48591911", "47985531", "48753031", "48753105", "48753132", "47320182", "47824751", "47465315", "47846348", "45936159", "46228217", "47465370"];
+    let AZUL = ["51017605", "50836309", "50688696", "51200881", "50335152", "50335191", "50631822", "95924386", "49500915", "49622515", "49586712", "49766819", "50178922", "49618820", "49622507", "49290769", "49456124", "48327110", "47821933", "46455370", "49057419", "49017357", "49017454", "49456158", "48536840", "47987739", "47320198", "48068733", "47465458", "47987718", "47987708", "47824756", "49556097", "47465449", "47465491", "48718958", "46228289", "46766184", "47701708"];
+    let VERDE = ["50239022", "50930841", "50836362", "50935623", "50631842", "50263592", "50930805", "50836368", "51203212", "50334257", "49498438", "50263640", "50106692", "49768484", "49765655", "50331189", "49964362", "50180337", "50236569", "49766850", "49078695", "48326629", "47987193", "48721652", "48533580", "49017996", "49017430", "49290784", "49322179", "49158577", "47713627", "48671660", "48327218", "47985165", "48327228", "47304183", "48536927", "48327205", "47824755", "49618798", "47824721", "47465358", "46592347", "47824778", "46034792"];
+    let AMARILLO = ["52892028", "49618890", "50239071", "51017631", "50523152", "51034840", "50423398", "51017678", "50033939", "49768285", "49622575", "49622532", "50239224", "49790608", "49964311", "49618770", "47987700", "49322145", "49017351", "49455947", "49216299", "48670313", "49455972", "48753167", "48531798", "48536481", "48904299", "48199380", "48068732", "47906740", "48671674", "47985529", "47465428", "47320134", "47363744", "47987539", "47701709", "95978262"];
+
+    console.log(ROJO.length,AZUL.length,VERDE.length,AMARILLO.length);
+    console.log(ROJO.length+AZUL.length+VERDE.length+AMARILLO.length);
+      function search(num)
+      {
+        if ((ROJO.indexOf(num) > -1))
+        {
+          info("ROJO");
+        }
+        else if ((AZUL.indexOf(num) > -1))
+        {
+          info("AZUL");
+        }
+        else if ((VERDE.indexOf(num) > -1))
+        {
+          info("VERDE");
+        }
+        else if ((AMARILLO.indexOf(num) > -1))
+        {
+          info("AMARILLO");
+        }
+        else
+        {
+          info("NO HA SIDO ENCONTRADO. Preguntar en preceptoría.");
+        }
+      }
+
+      function info(equipo)
+      {
+        document.getElementById('equipo').innerText = "Equipo: "+equipo;
+        if(equipo=="ROJO")
+        {
+          document.getElementById('equipo').style.borderBottom="red 3px solid";
+        }
+        if(equipo=="AZUL")
+        {
+          document.getElementById('equipo').style.borderBottom="blue 3px solid";
+        }
+        if(equipo=="VERDE")
+        {
+          document.getElementById('equipo').style.borderBottom="green 3px solid";
+        }
+        if(equipo=="AMARILLO")
+        {
+          document.getElementById('equipo').style.borderBottom="yellow 3px solid";
+        }
+        if(equipo=="NO HA SIDO ENCONTRADO")
+        {
+          document.getElementById('equipo').style.borderBottom="grey 3px solid";
+        }
+      }
+  </script>
+</body>
+
+</html>
